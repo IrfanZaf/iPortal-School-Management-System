@@ -125,11 +125,65 @@ https://docs.google.com/document/d/1dE3hMWrttRePGsLxlCPp2Ep47jzCLpxW1FVJskHwlZw/
 
 ### Step-by-Step Installation
 
-xx
+# Step 1: Clone the Repository
 
-xx
+- Open VS Code.
 
-xx
+- Open the terminal inside VS Code (Ctrl + `).
+
+- Navigate to your XAMPP web directory (usually C:\xampp\htdocs):
+
+cd C:\xampp\htdocs
+
+- Clone the project:
+
+git clone https://github.com/username/repository-name.git
+
+- Open the folder in VS Code: File > Open Folder > C:\xampp\htdocs\repository-name.
+
+# Step 2: Install Dependencies
+
+-Laravel projects don't include the "vendor" or "node_modules" folders on GitHub to save space. You must generate them:
+
+-Install PHP Packages:
+
+composer install
+
+- Install Frontend Packages:
+
+npm install
+
+- Step 3: Configure the Environment (.env)
+
+- GitHub projects usually provide a template file for settings.
+
+- In your file explorer, look for .env.example.
+
+- Rename it to just .env.
+
+- Generate a unique application key:
+
+php artisan key:generate
+
+# Step 4: Database Setup
+
+- Open XAMPP Control Panel and ensure Apache and MySQL are "Started."
+
+- Go to http://localhost/phpmyadmin in your browser.
+
+- Create a New Database (name it exactly what you see in your .env file under DB_DATABASE).
+
+- Back in the VS Code terminal, run the migrations to create tables:
+
+php artisan migrate
+
+# Step 5: Run the Project
+
+You have two ways to view your site:
+
+- Option A (The Laravel Way): Run php artisan serve. This will give you a URL like http://127.0.0.1:8000. Keep the terminal open while you work.
+
+- Option B (The XAMPP Way): Visit http://localhost/repository-name/public.
 
 ## Testing and Quality Assurance
 
